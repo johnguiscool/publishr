@@ -27,6 +27,7 @@ class Controller extends BaseController
     public function displayStory($id) {
     	$story = Story::where('id',$id)->get()->first();
 
-    	echo $story->content;
-    }
+
+    	return view('story', ['content'=>$story->content]);
+	}
 }

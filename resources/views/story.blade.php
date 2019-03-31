@@ -25,9 +25,10 @@
             }
 
             .flex-center {
-                align-items: center;
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+
             }
 
             .position-ref {
@@ -61,11 +62,21 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .container div{
+                max-width: 900px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-left: auto;
+                margin-right:auto;
+                font-family: Gerogia, serif;
+                font-size: 20px;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            
+        <div class="flex container">
+            {!! $content !!}
         </div>
     </body>
 </html>
