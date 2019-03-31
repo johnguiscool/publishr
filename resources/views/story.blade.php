@@ -4,79 +4,38 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title></title>
+        <title>{{$title}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .container div{
-                max-width: 900px;
-                padding-left: 20px;
-                padding-right: 20px;
-                margin-left: auto;
-                margin-right:auto;
+            div {
                 font-family: Gerogia, serif;
-                font-size: 20px;
+                font-size: 22px;
+                color: #494949;
             }
+
+            .title{
+                font-size: 42px;
+                font-weight: 400;
+                color: #101010;
+            }
+
+            .container {
+                max-width: 900px;
+            }
+
         </style>
     </head>
     <body>
-        <div class="flex container">
+        <div class="flex flex-col mt-10 mb-10 container px-10 mx-auto">
+            <div class="title mb-5">{{$title}}</div>
             {!! $content !!}
+            <a class="lg:fixed lg:pin-b lg:pin-r lg:mb-10 lg:mr-10" href="/">↩ Back</a>
         </div>
+
     </body>
 </html>

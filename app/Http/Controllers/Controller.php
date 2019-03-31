@@ -16,18 +16,13 @@ class Controller extends BaseController
     public function index() {
     	$stories = Story::all();
 
-    	echo "<ul>";
-    	foreach($stories as $story)
-    	{
-    		echo "<li>$story->title</li>";
-    	}
-    	echo "</ul>";
+    	return view('index', ['stories' => $stories]);
     }
 
     public function displayStory($id) {
     	$story = Story::where('id',$id)->get()->first();
 
 
-    	return view('story', ['content'=>$story->content]);
+    	return view('story', ['content'=>$story->content, 'title'=>$story->title]);
 	}
 }
