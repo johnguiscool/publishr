@@ -85,13 +85,13 @@
                         <div class="p-2 text-xs md:text-sm lg:text-base text-grey">Preview for free.  Available for: ${{$story->price}}</div>
                     @endif
                 </div>
-                <div class="w-1/4 flex items-center">
+                <div class="w-1/4 flex items-center" style='background: lightblue url("https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png") no-repeat; '>
                     @if($story->id==2)
-                    <img src="https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png">
+                    <img>
                     @elseif($story->id==3)
-                    <img src="https://cdn-images-1.medium.com/max/2560/1*g_jsX-iH3XSEyDOxZ6C6CQ.jpeg">
+                    <img>
                     @elseif($story->id==4)
-                    <img src="https://cdn-images-1.medium.com/max/800/1*E_zLW1GDS5G3k4GjP5FcUg.jpeg">
+                    <img>
                     @endif
 
                 </div>
