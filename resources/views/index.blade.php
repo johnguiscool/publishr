@@ -65,6 +65,21 @@
 
         <div class="flex flex-col mt-5 mb-32 container px-10 mx-auto">
             @foreach($stories as $story)
+
+            @php
+
+                $img = "";
+
+                if($story->id == 2) {
+                    $img = "https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png";
+                } else if($story->id == 3) {
+                    $img = "https://cdn-images-1.medium.com/max/800/1*_KoI2mft26PflPYeVIvXiA@2x.jpeg";
+                } else if ($story->id ==4 ) {
+                    $img = "https://cdn-images-1.medium.com/max/362/1*XmO0Oyd68-qBxXohFur3gg.png";
+                }
+
+            @endphp
+
             <div class="flex py-5 border-top">
                 <div class="w-3/4 text-lg md:text-xl lg:text-2xl">
                     <div class="p-2"> 
@@ -86,30 +101,9 @@
                     @endif
                 </div>
 
-                @php
-
-                    $img = "";
-
-                    if($story->id == 2) {
-                        $img = "https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png";
-                    } else if($story->id == 3) {
-                        $img = "https://cdn-images-1.medium.com/max/800/1*_KoI2mft26PflPYeVIvXiA@2x.jpeg";
-                    } else if ($story->id ==4 ) {
-                        $img = "https://cdn-images-1.medium.com/max/362/1*XmO0Oyd68-qBxXohFur3gg.png";
-                    }
-
-                @endphp
-
                 <div class="w-1/4 flex items-center" style='background: white url("{{$img}}") no-repeat; 
                     background-size: auto 100%;'>
-                    @if($story->id==2)
                     <img>
-                    @elseif($story->id==3)
-                    <img>
-                    @elseif($story->id==4)
-                    <img>
-                    @endif
-
                 </div>
             </div>
             @endforeach
