@@ -85,7 +85,23 @@
                         <div class="p-2 text-xs md:text-sm lg:text-base text-grey">Preview for free.  Available for: ${{$story->price}}</div>
                     @endif
                 </div>
-                <div class="w-1/4 flex items-center" style='background: lightblue url("https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png") no-repeat; '>
+
+                @php
+
+                    $img = "";
+
+                    if($story->id == 2) {
+                        $img = "https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png";
+                    } else if($story->id == 3) {
+                        $img = "https://cdn-images-1.medium.com/max/800/1*_KoI2mft26PflPYeVIvXiA@2x.jpeg";
+                    } else if ($story->id ==4 ) {
+                        $img = "https://cdn-images-1.medium.com/max/362/1*XmO0Oyd68-qBxXohFur3gg.png";
+                    }
+
+                @endphp
+
+                <div class="w-1/4 flex items-center" style='background: white url("{{$img}}") no-repeat; 
+                    background-size: auto 100%;'>
                     @if($story->id==2)
                     <img>
                     @elseif($story->id==3)
@@ -99,7 +115,7 @@
             @endforeach
         </div>
 
-        <footer class="absolute pin-b pin-x mb-5 text-center footer-font text-grey text-lg md:text-xl">Copyright 2019</footer>
+        <footer class="mb-5 text-center footer-font text-grey text-lg md:text-xl">Copyright 2019</footer>
 
     </body>
 </html>
