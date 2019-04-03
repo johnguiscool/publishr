@@ -10,6 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'Controller@index');
 Route::get('/story/{id}', 'Controller@displayStory');
