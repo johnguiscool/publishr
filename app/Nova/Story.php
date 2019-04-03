@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Image;
 
 
 use Illuminate\Http\Request;
@@ -50,6 +51,7 @@ class Story extends Resource
             Text::make('Title'),
             Trix::make('Summary'),
             Trix::make('Content'),
+            Image::make('Image'),
             Boolean::make('Is Published'),
             Boolean::make('Is Premium'),
             Number::make('price')->min(0)->max(1000)->step(0.01)
