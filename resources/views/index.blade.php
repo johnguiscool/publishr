@@ -59,8 +59,27 @@
         </style>
     </head>
     <body>
-        <header>
-            <div class="mt-5 ml-10 text-2xl md:text-3xl logo-font">novelglot</div>
+        <header class="mt-5 flex flex-col md:flex-row md:justify-between">
+            <div class="ml-10 text-2xl md:text-3xl logo-font">novelglot</div>
+
+            <nav class="flex flex-col items-left md:flex-row justify-end flex-wrap ml-10 mr-10">
+
+                  <a href="#" class="block mt-4 md:mt-0 md:inline-block md:mr-4 no-underline text-purple-darker
+                  font-semibold
+                  navigation-font
+                  text-base md:text-lg lg:text-xl">
+                    Essays
+                  </a>
+                  <div class="hidden md:inline mr-4">|</div>
+                  <a href="#" class="block mt-4 md:mt-0 md:inline-block md:mr-4 no-underline text-purple-darker
+                  font-semibold
+                  navigation-font
+                  text-base md:text-lg lg:text-xl">
+                  
+                    Fiction
+                  </a>
+
+            </nav>
         </header>
 
         <div class="flex flex-col mt-5 mb-32 container px-10 mx-auto">
