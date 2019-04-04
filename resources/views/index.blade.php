@@ -62,7 +62,7 @@
         <header class="mt-5 flex flex-col md:flex-row md:justify-between">
             <div class="ml-10 text-2xl md:text-3xl logo-font">novelglot</div>
 
-            <nav class="flex flex-col items-left md:flex-row justify-end flex-wrap ml-10 mr-10">
+            <!--nav class="flex flex-col items-left md:flex-row justify-end flex-wrap ml-10 mr-10">
 
                   <a href="#" class="block mt-4 md:mt-0 md:inline-block md:mr-4 no-underline text-purple-darker
                   font-semibold
@@ -79,7 +79,7 @@
                     Fiction
                   </a>
 
-            </nav>
+            </nav -->
         </header>
 
         <div class="flex flex-col mt-5 mb-32 container px-10 mx-auto">
@@ -87,22 +87,14 @@
 
             @php
 
-                $img = "";
-
-                if($story->id == 2) {
-                    $img = "https://cdn-images-1.medium.com/max/800/1*xBHTRaQBbXmpt8NvVSuz6w.png";
-                } else if($story->id == 3) {
-                    $img = "https://cdn-images-1.medium.com/max/800/1*_KoI2mft26PflPYeVIvXiA@2x.jpeg";
-                } else if ($story->id ==4 ) {
-                    $img = "https://cdn-images-1.medium.com/max/362/1*XmO0Oyd68-qBxXohFur3gg.png";
-                }
+                $img = "/storage/$story->image";
 
             @endphp
 
             <div class="flex py-5 border-top">
                 <div class="w-3/4 text-lg md:text-xl lg:text-2xl">
                     <div class="p-2"> 
-                        <a href="/story/{{$story->id}}" class="no-underline"><b class="title-font font-semibold text-purple-darker">{{$story->title}}</b></a>
+                        <a href="/story/{{$story->id}}" class="no-underline"><b class="title-font font-semibold text-purple-darker">{{$story->title}}</b> </a>
 
                         @if($story->is_premium)<span class="text-base md:text-lg lg:text-xl">★</span>@endif
                     </div>
