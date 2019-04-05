@@ -12,3 +12,6 @@
 */
 Route::get('/', 'Controller@index');
 Route::get('/story/{id}', 'Controller@displayStory');
+Route::post('/purchase', function() {
+	dd(request()->all());
+});

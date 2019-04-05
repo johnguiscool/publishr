@@ -120,6 +120,19 @@
             @endforeach
         </div>
 
+        <form action="/purchase" method="POST">
+            {{csrf_field()}}
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_yEJnXRU80AtRtOsi8P1b9dav00kMcdrMy0"
+            data-amount="999"
+            data-name="Demo Site"
+            data-description="Widget"
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            data-locale="auto">
+          </script>
+        </form>
+
         <footer class="mb-5 text-center footer-font text-grey text-lg md:text-xl">Copyright 2019</footer>
 
     </body>
