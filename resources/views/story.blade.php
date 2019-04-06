@@ -40,6 +40,21 @@
                 {!! $content !!}
             @elseif(!$isPremium)
                 {!! $content !!}
+            @else
+                This story can be purchased.
+
+                            <form class="mt-3" action="/purchase/{{$id}}" method="POST">
+                                {{csrf_field()}}
+                              <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="{{ config('services.stripe.key') }}"
+                                data-amount="99"
+                                data-name="Purchase Story"
+                                data-description="{{$title}}"
+                                data-image=""
+                                data-locale="auto">
+                              </script>
+                            </form>
             @endif
             <a class="lg:fixed lg:pin-b lg:pin-r lg:mb-10 lg:mr-10" href="/">↩ Back</a>
         </div>

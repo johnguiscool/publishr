@@ -26,7 +26,7 @@ class Controller extends BaseController
     public function displayStory($id) {
     	$story = Story::where('id',$id)->get()->first();
 
-    	return view('story', ['content'=>$story->content, 'title'=>$story->title, 'isPremium'=>$story->is_premium]);
+    	return view('story', ['id' => $story->id, 'content'=>$story->content, 'title'=>$story->title, 'isPremium'=>$story->is_premium]);
 	}
 
 	public function purchaseStory($id) {
