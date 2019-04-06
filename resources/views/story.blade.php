@@ -37,7 +37,6 @@
         <div class="flex flex-col mt-10 mb-10 container px-10 mx-auto">
             <div class="title mb-5">{{$title}}</div>
             @if(session('purchased'))
-                dd($purchased);
                 {!! $content !!}
             @elseif(!$isPremium)
                 {!! $content !!}

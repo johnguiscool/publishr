@@ -43,6 +43,6 @@ class Controller extends BaseController
 			'currency' => 'usd'
 		]);
 
-		return redirect("/story/$id");
+		return redirect("/story/$id")->with(['purchased' => "yes"]);
 	}
 }
