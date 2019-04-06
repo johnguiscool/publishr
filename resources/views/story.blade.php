@@ -32,10 +32,16 @@
 
         </style>
     </head>
-    <body>
+    <body>        
+
         <div class="flex flex-col mt-10 mb-10 container px-10 mx-auto">
             <div class="title mb-5">{{$title}}</div>
-            {!! $content !!}
+            @if(session('purchased'))
+                dd($purchased);
+                {!! $content !!}
+            @elseif(!$isPremium)
+                {!! $content !!}
+            @endif
             <a class="lg:fixed lg:pin-b lg:pin-r lg:mb-10 lg:mr-10" href="/">↩ Back</a>
         </div>
 

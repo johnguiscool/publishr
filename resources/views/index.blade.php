@@ -108,7 +108,23 @@
                         {!! $story->summary!!}
                     </div>
                     @if($story->is_premium)
-                        <div class="p-2 text-xs md:text-sm lg:text-base text-grey">Preview for free.  Available for: ${{$story->price}}</div>
+                        <div class="p-2 text-xs md:text-sm lg:text-base text-grey">Preview for free.  Available for: ${{$story->price}}
+
+                            <form class="mt-3" action="/purchase/{{$story->id}}" method="POST">
+                                {{csrf_field()}}
+                              <script
+                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                data-key="{{ config('services.stripe.key') }}"
+                                data-amount="99"
+                                data-name="Purchase Story"
+                                data-description="{{$story->title}}"
+                                data-image=""
+                                data-locale="auto">
+                              </script>
+                            </form>
+
+
+                        </div>
                     @endif
                 </div>
 
@@ -119,19 +135,6 @@
             </div>
             @endforeach
         </div>
-
-        <form action="/purchase" method="POST">
-            {{csrf_field()}}
-          <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_yEJnXRU80AtRtOsi8P1b9dav00kMcdrMy0"
-            data-amount="999"
-            data-name="Demo Site"
-            data-description="Widget"
-            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            data-locale="auto">
-          </script>
-        </form>
 
         <footer class="mb-5 text-center footer-font text-grey text-lg md:text-xl">Copyright 2019</footer>
 
